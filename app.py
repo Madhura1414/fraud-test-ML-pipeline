@@ -14,28 +14,41 @@ def predict_datapoint():
     if request.method == "GET": 
         return render_template("form.html")
     else: 
+        # data = CustomData(
+        #     trans_date_trans_time = request.form.get('trans_date_trans_time'),
+        #     cc_num =request.form.get('cc_num'),
+        #     merchant = request.form.get("merchant"), 
+        #     category = request.form.get("category"), 
+        #     amt = float(request.form.get("amt")),
+        #     first = request.form.get("first"), 
+        #     last = request.form.get("last"), 
+        #     gender = request.form.get("gender"), 
+        #     street = request.form.get("street"),
+        #     city = request.form.get('city'),
+        #     state = request.form.get('state'),
+        #     zip = int(request.form.get('zip')),
+        #     lat = float(request.form.get('lat')),
+        #     long = float(request.form.get('long')),
+        #     city_pop = int(request.form.get('city_pop')),
+        #     job = request.form.get('job'),
+        #     dob = request.form.get('dob'),
+        #     trans_num = request.form.get('trans_num'),
+        #     unix_time = int(request.form.get('unix_time')),
+        #     merch_lat= float(request.form.get('merch_lat')),
+        #     merch_long=float(request.form.get('merch_long'))
+        # )
         data = CustomData(
-            trans_date_trans_time = request.form.get('trans_date_trans_time'),
-            cc_num =request.form.get('cc_num'),
-            merchant = request.form.get("merchant"), 
+            time = request.form.get('time'),
             category = request.form.get("category"), 
             amt = float(request.form.get("amt")),
-            first = request.form.get("first"), 
-            last = request.form.get("last"), 
             gender = request.form.get("gender"), 
-            street = request.form.get("street"),
             city = request.form.get('city'),
-            state = request.form.get('state'),
-            zip = int(request.form.get('zip')),
+            
             lat = float(request.form.get('lat')),
-            long = float(request.form.get('long')),
-            city_pop = int(request.form.get('city_pop')),
+           
             job = request.form.get('job'),
-            dob = request.form.get('dob'),
-            trans_num = request.form.get('trans_num'),
-            unix_time = int(request.form.get('unix_time')),
-            merch_lat= float(request.form.get('merch_lat')),
-            merch_long=float(request.form.get('merch_long'))
+            age_group = request.form.get('age_group'),
+            
         )
     new_data = data.get_data_as_dataframe()
     predict_pipeline = PredictPipeline()

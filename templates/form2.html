@@ -1,0 +1,106 @@
+
+<html>
+<body>
+<form action="{{url_for('predict_datapoint')}}" method="POST">
+    <div class="form-group">
+        <label for="ctrans_date_trans_timearat">trans_date_trans_time:</label>
+        <input type="text" id="trans_date_trans_time" name="trans_date_trans_time" placeholder="Enter trans_date_trans_time(dd/mm/yyyy hh:mm)">
+    </div>
+
+    <div class="form-group">
+        <label for="cc_num">cc_num:</label>
+        <input type="text" id="cc_num" name="cc_num" placeholder="Enter cc_num (float)">
+    </div>
+
+    <div class="form-group">  
+        <label for="merchant">merchant</label>
+        <input type="text" id="merchant" name="merchant" placeholder="Enter merchant (str)">
+    </div>
+    
+    <div class="form-group">
+        <label for="category">category</label>
+        <input type="text" id="category" name="category" placeholder="Enter category (str)">
+    </div>
+  
+    <div class="form-group">
+        <label for="amt">amt:</label>
+        <input type="text" id="amt" name="amt" placeholder="Enter amt (float)">
+    </div>
+  
+    <div class="form-group">
+        <label for="first">first:</label>
+        <input type="text" id="first" name="first" placeholder="Enter first (str)">
+    </div>  
+    
+    <div class="form-group">
+      <label for="last">last:</label>
+      <input type="text" id="last" name="last" placeholder="Enter last (str)">
+    </div>  
+
+  <div class="form-group">
+    <label for="gender">gender:</label>
+    <input type="text" id="gender" name="gender" placeholder="Enter gender (M/F)">
+  </div>  
+
+  <div class="form-group">
+    <label for="street">street:</label>
+    <input type="text" id="street" name="street" placeholder="Enter street (str)">
+  </div>  
+
+  <div class="form-group">
+    <label for="city">city:</label>
+    <input type="text" id="city" name="city" placeholder="Enter city (str)">
+  </div>  
+  <div class="form-group">
+    <label for="state">state:</label>
+    <input type="text" id="state" name="state" placeholder="Enter state (str)">
+  </div>  
+  <div class="form-group">
+    <label for="zip">zip:</label>
+    <input type="text" id="zip" name="zip" placeholder="Enter zip (int:5 digits)">
+  </div>  
+  <div class="form-group">
+    <label for="lat">lat:</label>
+    <input type="text" id="lat" name="lat" placeholder="Enter lat (float)">
+  </div>  
+  <div class="form-group">
+    <label for="long">long:</label>
+    <input type="text" id="long" name="long" placeholder="Enter long (float)">
+  </div>  
+  <div class="form-group">
+    <label for="city_pop">city_pop:</label>
+    <input type="text" id="city_pop" name="city_pop" placeholder="Enter city_pop (int)">
+  </div>  
+  <div class="form-group">
+    <label for="job">job:</label>
+    <input type="text" id="job" name="job" placeholder="Enter job (str)">
+  </div>  
+  <div class="form-group">
+    <label for="dob">dob:</label>
+    <input type="text" id="dob" name="dob" placeholder="Enter dob (str)">
+  </div>  
+  <div class="form-group">
+    <label for="trans_num">trans_num:</label>
+    <input type="text" id="trans_num" name="trans_num" placeholder="Enter trans_num (str)">
+  </div>  
+  <div class="form-group">
+    <label for="unix_time">unix_time:</label>
+    <input type="text" id="unix_time" name="unix_time" placeholder="Enter unix_time (int)">
+  </div>  
+
+  <div class="form-group">
+    <label for="merch_lat">merch_lat:</label>
+    <input type="text" id="merch_lat" name="merch_lat" placeholder="Enter merch_lat (float)">
+  </div>  
+
+  <div class="form-group">
+    <label for="merch_long">merch_long:</label>
+    <input type="text" id="merch_long" name="merch_long" placeholder="Enter merch_long (float)">
+  </div>  
+
+
+<div style="clear:both;"></div>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -4,9 +4,9 @@ from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
 
 if __name__ == "__main__": 
-    # obj = ConnectDatabase()
-    # obj.establish_connection('localhost','root','root123','fraudtest','projectdata')
-    # obj.retrieve_data()
+    obj = ConnectDatabase()
+    obj.establish_connection('localhost','root','root123','fraudtest','projectdata')
+    obj.retrieve_data()
     
     obj1 = DataIngestion()
     train_data_path, test_data_path = obj1.initiate_data_ingestion()

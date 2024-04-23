@@ -11,8 +11,9 @@ class PredictPipeline:
 
     def predict(self, features): 
         try: 
-            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
-            model_path = os.path.join("artifacts", "model.pkl")
+            data_path = r'C:\Users\Bharath\Desktop\Maddy\third_eye\ML_pipeline\src\pipeline\artifacts'
+            preprocessor_path = os.path.join(data_path, 'preprocessor.pkl')
+            model_path = os.path.join(data_path, "model.pkl")
 
             preprocessor = load_obj(preprocessor_path)
             model = load_obj(model_path)
@@ -27,81 +28,52 @@ class PredictPipeline:
         # 'category', 'amt', 'gender', 'city', 'lat', 'job', 'is_fraud', 'time',
     #    'age_group'
     
-    # (['Unnamed: 0', 'trans_date_trans_time', 'cc_num', 'merchant', 'category',
-    #    'amt', 'first', 'last', 'gender', 'street', 'city', 'state', 'zip',
-    #    'lat', 'long', 'city_pop', 'job', 'dob', 'trans_num', 'unix_time',
-    #    'merch_lat', 'merch_long', 'is_fraud'],
-    #   dtype='object')
+
         
 class CustomData: 
         def __init__(self,
-                        trans_date_trans_time: str,
-                        cc_num:float,
-                        merchant:str,
+                        time: str,
                         category:str,
                         amt:float,
-                        first:str,
-                        last:str,
+                        
                         gender:str,
-                        street:str,
+                        
                         city:str,
-                        state:str,
-                        zip:int,
+                       
                         lat:float,
-                        long:float,
-                        city_pop:int,
+                       
                         job:str,
-                        dob:str,
-                        trans_num:str,
-                        unix_time:int,
-                        merch_lat:float,
-                        merch_long:float): 
-            self.trans_date_trans_time=trans_date_trans_time
-            self.cc_num=cc_num
-            self.merchant=merchant
+                        age_group: str): 
+            self.time=time
+           
             self.category=category
             self.amt=amt
-            self.first=first
-            self.last=last
+           
             self.gender=gender
-            self.street=street
+           
             self.city=city
-            self.state=state
-            self.zip=zip
+            
             self.lat=lat
-            self.long=long
-            self.city_pop=city_pop
+            
             self.job=job
-            self.dob=dob
-            self.trans_num=trans_num
-            self.unix_time=unix_time
-            self.merch_lat=merch_lat
-            self.merch_long=merch_long
+            self.age_group = age_group
         
         def get_data_as_dataframe(self): 
              try: 
                   custom_data_input_dict = {
-                    'trans_date_trans_time':[self.trans_date_trans_time],
-                    'cc_num':[self.cc_num],
-                    'merchant':[self.merchant],
+                    'time':[self.time],
+                  
                     'category':[self.category],
                     'amt':[self.amt],
-                    'first':[self.first],
-                    'last':[self.last],
+                    
                     'gender':[self.gender],
-                    'street':[self.street],
+                  
                     'city':[self.city],
-                    'state':[self.state],
-                    'zip':[self.zip],
+                  
                     'lat':[self.lat],
-                    'long':[self.long],
-                    'city_pop':[self.city_pop],
+                   
                     'job':[self.job],
-                    'dob':[self.dob],
-                    'trans_num':[self.trans_num],
-                    'unix_time':[self.unix_time],
-                    'merch_lat':[self.merch_lat],
-                    'merch_long':[self.merch_long]
+                    'age_group':[self.age_group]
                   }
                   df = pd.DataFrame(custom_data_input_dict)
                   logging.info("Dataframe created")
